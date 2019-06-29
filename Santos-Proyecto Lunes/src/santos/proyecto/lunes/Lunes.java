@@ -20,12 +20,29 @@ public static VentanaLogin ventanaLogin = null;
         iniciar();
         
         
-        System.out.println("Hola mundo");
         
-        System.out.println("Adios");
+        
+        //System.out.println("Hola mundo");
+        
+        //System.out.println("Adios");
+        
+        
+        
+        
     }
     
     public static void iniciar(){
         ventanaLogin.setVisible(true);
+    }
+    
+    public static void mostrar(){
+        PersonaCorta per1 = new PersonaCorta("Juan","Perez",28);
+        PersonaCorta per2 = new PersonaCorta("Marta","Lopez",38);
+        PersonaCorta per3 = new PersonaCorta("Pepe","Argento",59);
+        
+        System.out.println(per1.getNombre());
+        System.out.println(per2.getNombre());
+        per3.setNombre("Xuxa");
+        System.out.println(per1.getNombre());
     }
 }

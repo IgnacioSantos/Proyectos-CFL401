@@ -44,8 +44,18 @@ public class VentanaLogin extends javax.swing.JFrame {
         lblEstado.setText("Texto a modificar");
 
         botonIngresar.setText("Ingresar");
+        botonIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonIngresarMouseClicked(evt);
+            }
+        });
 
         botonSalir.setText("Salir");
+        botonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonSalirMouseClicked(evt);
+            }
+        });
 
         clave.setText("jPasswordField1");
 
@@ -99,6 +109,16 @@ public class VentanaLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIngresarMouseClicked
+        Lunes.mostrar();
+        
+    }//GEN-LAST:event_botonIngresarMouseClicked
+
+    private void botonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalirMouseClicked
+        System.exit(0);
+        
+    }//GEN-LAST:event_botonSalirMouseClicked
 
     /**
      * @param args the command line arguments
