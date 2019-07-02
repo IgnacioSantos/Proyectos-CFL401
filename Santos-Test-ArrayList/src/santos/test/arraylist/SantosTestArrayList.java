@@ -13,6 +13,7 @@ import java.util.Scanner;
  * @author Programación
  */
 public class SantosTestArrayList {
+Mascotas mascotas;
 
     /**
      * @param args the command line arguments
@@ -25,8 +26,6 @@ public class SantosTestArrayList {
         ArrayList <Integer> elem2 = new ArrayList();
         boolean bandera = true;
         int numero;
-        
-        
         
         elem.add("Perro");
         elem.add(4);
@@ -52,6 +51,9 @@ public class SantosTestArrayList {
             }catch (Exception e){
                 System.out.println("No ingresaste un numero");
             }
+            
+            
+            
     }
     
 }
