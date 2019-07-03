@@ -24,6 +24,8 @@ Mascotas mascotas;
         ArrayList elem = new ArrayList();
         Scanner teclado = new Scanner(System.in);
         ArrayList <Integer> elem2 = new ArrayList();
+        ArrayList <Mascotas> mascotas = new ArrayList();//se genera una variable de tipo de dato mascotas
+        Mascotas perro1 = new Mascotas("Tory",4,22);//new creas un nuevo objeto de atributos para el elemento
         boolean bandera = true;
         int numero;
         
@@ -52,7 +54,7 @@ Mascotas mascotas;
                 System.out.println("No ingresaste un numero");
             }
             
-            
+            mascotas.add(perro1);
             
     }
     
