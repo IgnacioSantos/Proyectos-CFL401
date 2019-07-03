@@ -28,8 +28,10 @@ Mascotas mascotas;
         Mascotas perro1 = new Mascotas("Tory",4,22);//new creas un nuevo objeto de atributos para el elemento
         Mascotas gato1 = new Mascotas("Mish",3,10);
         Mascotas loro1 = new Mascotas("Poly",2,25);
-        boolean bandera = true;
+        boolean bandera = true; boolean bandera2 = true;
         int numero;
+        String nombre;
+        int patas,edad;
         
         elem.add("Perro");
         elem.add(4);
@@ -56,16 +58,34 @@ Mascotas mascotas;
                 System.out.println("No ingresaste un numero");
             }*/
             
-            mascotas.add(perro1);
+            mascotas.add(new Mascotas("Tory",4,22));//genera un nuevo elemento para colocarlo en la memoria
             
             System.out.println(mascotas);//solo con el nombre del objeto mostrara una posicion en la memoria
             
-            mascotas.add(gato1);
-            mascotas.add (loro1);
+            mascotas.add(new Mascotas("Mish",3,10));
+            mascotas.add(new Mascotas("Poly",2,25));
             
             System.out.println(mascotas);//al agregar varias mascotas se muestra las posiciones que tiene cada tipo de dato
             
+            while (bandera2) {
             
+                System.out.println("Ingrese el nombre de la mascota o ingrese salir para cerrar el programa: ");
+                nombre = teclado.nextLine();
+                if (nombre.equals("Salir")||nombre.equals("salir")) {
+                    bandera2 = !bandera2;
+                }else{
+                System.out.println("Ingrese la cantidad de patas que tiene: ");
+                patas = teclado.nextInt();
+                System.out.println("Ingrese la edad actual: ");
+                edad = teclado.nextInt();
+                
+                mascotas.add(new Mascotas(nombre,patas,edad));
+                teclado.nextLine();
+                
+                
+                    System.out.println(mascotas);
+                }
+        }
             
     }
     
