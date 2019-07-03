@@ -26,6 +26,8 @@ Mascotas mascotas;
         ArrayList <Integer> elem2 = new ArrayList();
         ArrayList <Mascotas> mascotas = new ArrayList();//se genera una variable de tipo de dato mascotas
         Mascotas perro1 = new Mascotas("Tory",4,22);//new creas un nuevo objeto de atributos para el elemento
+        Mascotas gato1 = new Mascotas("Mish",3,10);
+        Mascotas loro1 = new Mascotas("Poly",2,25);
         boolean bandera = true;
         int numero;
         
@@ -47,14 +49,23 @@ Mascotas mascotas;
         }
             System.out.println(elem2);*/
             
-            try{
+            /*try{
                 numero = teclado.nextInt();
                 System.out.println(numero);
             }catch (Exception e){
                 System.out.println("No ingresaste un numero");
-            }
+            }*/
             
             mascotas.add(perro1);
+            
+            System.out.println(mascotas);//solo con el nombre del objeto mostrara una posicion en la memoria
+            
+            mascotas.add(gato1);
+            mascotas.add (loro1);
+            
+            System.out.println(mascotas);//al agregar varias mascotas se muestra las posiciones que tiene cada tipo de dato
+            
+            
             
     }
     
