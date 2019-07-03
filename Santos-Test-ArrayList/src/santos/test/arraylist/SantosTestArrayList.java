@@ -5,6 +5,7 @@
  */
 package santos.test.arraylist;
 
+import static java.lang.Thread.sleep;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ Mascotas mascotas;
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println("Hola Mundo");
         
         ArrayList elem = new ArrayList();
@@ -74,8 +75,15 @@ Mascotas mascotas;
                 if (nombre.equals("Salir")||nombre.equals("salir")) {
                     bandera2 = !bandera2;
                 }else{
-                System.out.println("Ingrese la cantidad de patas que tiene: ");
+                
+                    System.out.println("Ingrese la cantidad de patas que tiene: ");
+                
                 patas = teclado.nextInt();
+                /*try{
+                patas = teclado.nextInt();
+                }catch(Exception e){
+                    System.out.println("No ingreso un numero");
+                }*/
                 System.out.println("Ingrese la edad actual: ");
                 edad = teclado.nextInt();
                 
@@ -84,8 +92,22 @@ Mascotas mascotas;
                 
                 
                     System.out.println(mascotas);
+                
                 }
         }
+            /*String nombre;
+            int patas,edad;
+            
+            nombre = entrada.nextLiine();
+            
+            while (!nombre.equals("salir"){// (!nombre.toUppercase().equals("salir".toUppercase()){
+            patas = entrada.nextInt();
+            edad = entrada.nextInt();
+            mascotas.add(new Mascotas(nombre,patas,edad));
+            nombre=entrada.nextLine();
+            }
+            System.out.Println(mascotas);
+            */
             
     }
     
