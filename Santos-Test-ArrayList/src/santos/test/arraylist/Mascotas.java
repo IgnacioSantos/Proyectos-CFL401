@@ -10,22 +10,22 @@ package santos.test.arraylist;
  * @author Programación
  */
 public class Mascotas {
-    private String animales;
+    private String nombres;
     private int patas;
     private int edad;
 
-    public Mascotas(String animales, int patas, int edad) {
-        this.animales = animales;
+    public Mascotas(String nombres, int patas, int edad) {
+        this.nombres = nombres;
         this.patas = patas;
         this.edad = edad;
     }
 
-    public String getAnimales() {
-        return animales;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setAnimales(String animales) {
-        this.animales = animales;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public int getPatas() {
