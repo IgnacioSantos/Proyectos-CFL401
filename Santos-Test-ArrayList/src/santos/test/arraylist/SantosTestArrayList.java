@@ -104,6 +104,7 @@ Mascotas mascotas;
             patas = entrada.nextInt();
             edad = entrada.nextInt();
             mascotas.add(new Mascotas(nombre,patas,edad));
+            entrada.nextLine();
             nombre=entrada.nextLine();
             }
             System.out.Println(mascotas);
