@@ -102,7 +102,7 @@ Mascotas mascotas;
                     //it.hasNext();//significa si hay un proximo elemento y esto devuelve un valor true o false
                     //it.next();//sirve para conseguir el proximo elemento
                     while (it.hasNext()) {//se puede crear variables provisorias que muere dentro del while
-                        Mascotas mascota = (Mascotas) it.next();
+                        Mascotas mascota = (Mascotas) it.next();//se sugiere crear una variable auxiliar
                         
                         //System.out.println(((Mascotas) it.next()).getNombres());// la parte (mascotas) tomara el tipo de dato el it.next() lo agarra y se la asigna a getNombres()
                         
