@@ -7,6 +7,7 @@ package santos.test.arraylist;
 
 import static java.lang.Thread.sleep;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -91,21 +92,34 @@ Mascotas mascotas;
                 teclado.nextLine();
                 
                 
-                    System.out.println(mascotas);
-                
+                    //System.out.println(mascotas);
+                    
+                    
+                    }
                 }
+            Iterator it = mascotas.iterator();
+                    
+                    //it.hasNext();//significa si hay un proximo elemento y esto devuelve un valor true o false
+                    //it.next();//sirve para conseguir el proximo elemento
+                    while (it.hasNext()) {//se puede crear variables provisorias que muere dentro del while
+                        Mascotas mascota = (Mascotas) it.next();
+                        
+                        //System.out.println(((Mascotas) it.next()).getNombres());// la parte (mascotas) tomara el tipo de dato el it.next() lo agarra y se la asigna a getNombres()
+                        
+                        System.out.println(mascota.getNombres()+" "+mascota.getPatas()+" "+mascota.getEdad());
+                        
         }
             /*String nombre;
             int patas,edad;
             
-            nombre = entrada.nextLiine();
+            nombre = teclado.nextLiine();
             
             while (!nombre.equals("salir"){// (!nombre.toUppercase().equals("salir".toUppercase()){
-            patas = entrada.nextInt();
-            edad = entrada.nextInt();
+            patas = teclado.nextInt();
+            edad = teclado.nextInt();
             mascotas.add(new Mascotas(nombre,patas,edad));
-            entrada.nextLine();
-            nombre=entrada.nextLine();
+            teclado.nextLine();
+            nombre = teclado.nextLine();
             }
             System.out.Println(mascotas);
             */
