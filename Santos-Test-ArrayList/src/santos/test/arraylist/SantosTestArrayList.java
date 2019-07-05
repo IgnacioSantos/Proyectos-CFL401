@@ -89,7 +89,7 @@ Mascotas mascotas;
                 edad = teclado.nextInt();
                 
                 mascotas.add(new Mascotas(nombre,patas,edad));
-                teclado.nextLine();
+                teclado.nextLine();//siempre se le agregar para evitar saltarse el pedido de cualquier info ingresado por el usuario
                 
                 
                     //System.out.println(mascotas);
