@@ -79,17 +79,19 @@ Mascotas mascotas;
                 
                     System.out.println("Ingrese la cantidad de patas que tiene: ");
                 
+                //patas = teclado.nextInt();
+                try{
                 patas = teclado.nextInt();
-                /*try{
-                patas = teclado.nextInt();
-                }catch(Exception e){
-                    System.out.println("No ingreso un numero");
-                }*/
                 System.out.println("Ingrese la edad actual: ");
                 edad = teclado.nextInt();
-                
                 mascotas.add(new Mascotas(nombre,patas,edad));
+                }catch(Exception e){
+                    System.out.println("No ingreso un numero");
+                }
                 teclado.nextLine();//siempre se le agregar para evitar saltarse el pedido de cualquier info ingresado por el usuario
+                
+                
+                
                 
                 
                     //System.out.println(mascotas);
