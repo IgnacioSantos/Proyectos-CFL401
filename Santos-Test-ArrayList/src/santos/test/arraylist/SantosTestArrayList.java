@@ -112,7 +112,7 @@ Mascotas mascotas;
             /*String nombre;
             int patas,edad;
             
-            nombre = teclado.nextLiine();
+            nombre = teclado.nextLine();
             
             while (!nombre.equals("salir"){// (!nombre.toUppercase().equals("salir".toUppercase()){
             patas = teclado.nextInt();
