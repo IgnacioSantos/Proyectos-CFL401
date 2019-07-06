@@ -20,7 +20,7 @@ Mascotas mascotas;
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {/*
         System.out.println("Hola Mundo");
         
         ArrayList elem = new ArrayList();
@@ -60,7 +60,7 @@ Mascotas mascotas;
                 System.out.println("No ingresaste un numero");
             }*/
             
-            mascotas.add(new Mascotas("Tory",4,22));//genera un nuevo elemento para colocarlo en la memoria
+            /*mascotas.add(new Mascotas("Tory",4,22));//genera un nuevo elemento para colocarlo en la memoria
             
             System.out.println(mascotas);//solo con el nombre del objeto mostrara una posicion en la memoria
             
@@ -125,7 +125,24 @@ Mascotas mascotas;
             }
             System.out.Println(mascotas);
             */
+            Persona per1 = new Persona("Jose Luis",45);
+            Persona per2 = new Persona("Marta",53);
             
+            Mascotas perro = new Mascotas("Boby",4,7);
+            Mascotas gato = new Mascotas("Sultan",4,2);
+            Mascotas loro = new Mascotas("Pepe",2,10);
+            
+            per1.agregarMascota(perro);
+            per2.agregarMascota(gato);
+            per1.agregarMascota(loro);
+            gato.setEdad(gato.getEdad()+1);//lo primero se le manda el dato nuevo pero se le exige el dato actual y lo modificas
+            /*int edad=gato.getEdad()
+            edad++;edad=edad+1;edad+=1;
+            gato.setEdad(edad);
+            */
+            
+            System.out.println("Usted tiene "+per1.cuantasMascotasTenes()+" Mascotas");
+            System.out.println("Usted tiene "+per2.cuantasMascotasTenes()+" Mascotas");
     }
     
 }
