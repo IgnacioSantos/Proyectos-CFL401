@@ -5,6 +5,10 @@
  */
 package santos.test.archivos;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  *
  * @author Programación
@@ -113,7 +117,32 @@ public class VentanaLogin extends javax.swing.JFrame {
     private void btnIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseClicked
         String usuario = user.getText();
         String contrasena = pass.getText();
-        texto.setText("el usuario es: "+usuario+" y contraseña es: "+contrasena);
+        //texto.setText("el usuario es: "+usuario+" y contraseña es: "+contrasena);
+        FileReader file = null;
+        BufferedReader lector = null;
+        
+        try{
+            file = new FileReader("users.txt");//encuentra un archivo y lo tratara de leerlo e interpretarlo
+            lector = new BufferedReader(file);//generara una memoria llamada Buffer y lo graba en el PC
+            String texto2 = lector.readLine();//le asignamos una variable e inicialezamos para su lectura
+            
+            while(texto2!=null){//cuando es distinto a null seguira mostrando el contenido que tiene el texto
+                if (usuario.equals(texto2.split(";;;")[0])&&contrasena.equals(texto2.split(";;;")[1])){
+                    texto.setText("el usuario es: "+usuario+" y contraseña es: "+contrasena);
+                    texto2 = null;
+                }else{
+                    texto.setText("Incorrecto");
+                    texto2 = lector.readLine();
+                }
+                
+                //texto = lector.readLine();
+                
+            }
+            lector.close();
+        }catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
+        
     }//GEN-LAST:event_btnIngresarMouseClicked
 
     /**
