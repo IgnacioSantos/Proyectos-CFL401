@@ -26,6 +26,9 @@ public class SantosTestArchivos {
     public static void main(String[] args) {
         agregarArchivoTexto();
         leerArchivoTexto();
+        VentanaLogin ventana = new VentanaLogin();//creamos un objeto del tipo de dato (VentanaLogin)
+        
+        ventana.setVisible(true);//hacemos que se muestre al usuario ya que debe tener un valor true para eso
         
     }
     
@@ -49,7 +52,7 @@ public class SantosTestArchivos {
         BufferedReader lector = null;
         
         try{
-            file = new FileReader("users.txt");
+            file = new FileReader("users.txt");//encuentra un archivo y lo tratara de leerlo e interpretarlo
             lector = new BufferedReader(file);//generara una memoria llamada Buffer y lo graba en el PC
             String texto = lector.readLine();//le asignamos una variable e inicialezamos para su lectura
             
