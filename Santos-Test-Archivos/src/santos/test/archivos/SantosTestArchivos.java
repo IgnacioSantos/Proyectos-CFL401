@@ -61,12 +61,24 @@ public class SantosTestArchivos {
             while(texto!=null){//cuando es distinto a null seguira mostrando el contenido que tiene el texto
                 //System.out.println(texto);
                 System.out.println(texto.split(";;;")[0]);//separa los contenidos en base a su especificacion dentro de los (" ")
-                System.out.println(texto.split(";;;")[1]);//tambien se transforma en un array de string
+                System.out.println(texto.split(";;;")[1]+"\n");//tambien se transforma en un array de string
                 texto = lector.readLine();
-                //String[] tp = texto.split(";;;");
-                //System.out.println(tp [0]);
-                //System.out.println(tp [1]);
+              /*
+                try{
+                String[] tp;
+                String texto = lector.readLine();
                 
+                while (texto!=null){
+                
+                tp = texto.split(";;;");
+                System.out.println(tp [0]);
+                System.out.println(tp [1]+"\n");
+                texto = texto.readLine();
+                }
+                }catch(IOExeption ex){
+                
+                }
+                */
             }
             lector.close();
         }catch(IOException ex){
