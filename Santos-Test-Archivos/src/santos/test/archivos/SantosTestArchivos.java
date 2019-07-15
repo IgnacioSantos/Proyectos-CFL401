@@ -19,19 +19,41 @@ import java.util.logging.Logger;
  * @author Programación
  */
 public class SantosTestArchivos {
+    
+    private static VentanaLogin ventana;
+    private static Ventana ventana2;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        agregarArchivoTexto();
+        /*agregarArchivoTexto();
         leerArchivoTexto();
         VentanaLogin ventana = new VentanaLogin();//creamos un objeto del tipo de dato (VentanaLogin)
+        Ventana ventana2 = new Ventana();*/
 
-        ventana.setVisible(true);//hacemos que se muestre al usuario ya que debe tener un valor true para eso
+        //ventana.setVisible(true);//hacemos que se muestre al usuario ya que debe tener un valor true para eso
         //se tiene que agregar /** y terminar con*/ para hacer la documentacion de la funcion de cada clase
+        //ventana2.setVisible(true);
+        /*Testeo test = new Testeo();
+        Testeo test2 = new Testeo();
+        test.setApellido("firu");
+        test2.setApellido("LG");
+        
+        System.out.println(test.getApellido());
+        System.out.println(test2.getApellido());
+        
+        test.setApellido("firu");
+        
+        System.out.println(test.getApellido());
+        System.out.println(test2.getApellido());*/
+ /*Testeo.setApellido("Loco");//le asignamos a la clases sea public static
+        
+        System.out.println(Testeo.getApellido());*/
+        mostrarLogin();
+        
     }
-
+    
     private static void agregarArchivoTexto() {
         FileWriter file = null;//la clase que va a conectarse con el archivo dentro del parentesis puede haber (ruta al archivo,sobreescribir)-("texto.txt",false)
         PrintWriter escritor = null;
@@ -46,9 +68,9 @@ public class SantosTestArchivos {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-
+        
     }
-
+    
     private static void leerArchivoTexto() {
         FileReader file = null;//genera un archivo
         BufferedReader lector = null;//leera el archivo
@@ -84,5 +106,20 @@ public class SantosTestArchivos {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    /**
+     * el metodo mostraLogin va a mostrar una ventana para hacer Login.
+     */
+    public static void mostrarLogin() {
+        ventana = new VentanaLogin();//creamos un objeto del tipo de dato (VentanaLogin)
+        ventana.setVisible(true);
+        
+    }
+    
+    public static void mostrarVentanaPrincipal() {
+        ventana.setVisible(false);
+        ventana2 = new Ventana();
+        ventana2.setVisible(true);
     }
 }
