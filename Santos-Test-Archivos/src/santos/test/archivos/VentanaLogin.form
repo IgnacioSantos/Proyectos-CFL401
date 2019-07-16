@@ -51,7 +51,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="contraseña" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="contrasena" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="usuario" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -81,7 +81,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="contraseña" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="contrasena" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="pass" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -99,7 +99,7 @@
             <Property name="text" type="java.lang.String" value="Usuario:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="contrase&#xf1;a">
+        <Component class="javax.swing.JLabel" name="contrasena">
           <Properties>
             <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
           </Properties>

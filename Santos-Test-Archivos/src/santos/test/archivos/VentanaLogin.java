@@ -33,7 +33,7 @@ public class VentanaLogin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         usuario = new javax.swing.JLabel();
-        contraseña = new javax.swing.JLabel();
+        contrasena = new javax.swing.JLabel();
         user = new javax.swing.JTextField();
         texto = new javax.swing.JLabel();
         btnIngresar = new javax.swing.JButton();
@@ -43,7 +43,7 @@ public class VentanaLogin extends javax.swing.JFrame {
 
         usuario.setText("Usuario:");
 
-        contraseña.setText("Contraseña:");
+        contrasena.setText("Contraseña:");
 
         texto.setText("Para ingresar apriete sobre el boton Ingresar.");
 
@@ -63,7 +63,7 @@ public class VentanaLogin extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(contraseña)
+                            .addComponent(contrasena)
                             .addComponent(usuario))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -85,7 +85,7 @@ public class VentanaLogin extends javax.swing.JFrame {
                     .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contraseña)
+                    .addComponent(contrasena)
                     .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(texto)
@@ -115,13 +115,13 @@ public class VentanaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseClicked
-        String usuario = user.getText();
-        String contrasena = pass.getText();
+        //String usuario = user.getText();
+        //String contrasena = pass.getText();
         //texto.setText("el usuario es: "+usuario+" y contraseña es: "+contrasena);
-        FileReader file = null;
-        BufferedReader lector = null;
+        //FileReader file = null;
+        //BufferedReader lector = null;
         
-        try{
+        /*try{
             file = new FileReader("users.txt");//encuentra un archivo y lo tratara de leerlo e interpretarlo
             lector = new BufferedReader(file);//generara una memoria llamada Buffer y lo graba en el PC
             String texto2 = lector.readLine();//le asignamos una variable e inicialezamos para su lectura
@@ -141,8 +141,8 @@ public class VentanaLogin extends javax.swing.JFrame {
             lector.close();
         }catch(IOException ex){
             System.out.println(ex.getMessage());
-        }
-        
+        }*/
+        SantosTestArchivos.mostrarVentanaPrincipal();
     }//GEN-LAST:event_btnIngresarMouseClicked
 
     /**
@@ -182,7 +182,7 @@ public class VentanaLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
-    private javax.swing.JLabel contraseña;
+    private javax.swing.JLabel contrasena;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField pass;
     private javax.swing.JLabel texto;
