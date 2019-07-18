@@ -5,6 +5,8 @@
  */
 package santos.test.archivos;
 
+import java.awt.Color;
+
 /**
  *
  * @author Programación
@@ -148,11 +150,25 @@ public class Ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void edadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_edadKeyTyped
-        if (evt.getKeyChar() >= 48 && evt.getKeyChar() <= 57) {
-            System.out.println(evt.getKeyChar());
-        } else {
+        String texto = edad.getText();
+
+        if (evt.getKeyChar() >= '0'
+                && evt.getKeyChar() <= '9'
+                && edad.getText().length() <= 3
+                &&(edad.getText().length() == 0 || Integer.parseInt(edad.getText() + evt.getKeyChar()) <= 150)){
+        
+        
+        
+            edad.setBackground(Color.green);
+
+            
+
+        }else {
+            edad.setBackground(Color.red);
             evt.consume();
         }
+
+
     }//GEN-LAST:event_edadKeyTyped
 
     /**
