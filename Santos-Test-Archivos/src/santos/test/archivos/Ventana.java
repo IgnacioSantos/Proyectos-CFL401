@@ -155,15 +155,11 @@ public class Ventana extends javax.swing.JFrame {
         if (evt.getKeyChar() >= '0'
                 && evt.getKeyChar() <= '9'
                 && edad.getText().length() <= 3
-                &&(Integer.parseInt(edad.getText() + evt.getKeyChar()) <= 150)){
-        
-        
-        
+                && (Integer.parseInt(edad.getText() + evt.getKeyChar()) <= 150)) {
+
             edad.setBackground(Color.green);
 
-            
-
-        }else {
+        } else {
             edad.setBackground(Color.red);
             evt.consume();
         }
