@@ -17,7 +17,6 @@ public class Persona {
     private String apellido;
     private int edad;
     private int dni;
-    private Mascota[] mascotas;
     private ArrayList <Mascota> mascotas;
 
     public Mascota[] getMascota() {
