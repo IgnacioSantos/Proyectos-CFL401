@@ -25,6 +25,7 @@ public class Persona {
 
     public void setMascota(Mascota mascota) {
         mascotas.add(mascota);
+        mascota.setId(id);
     }
 
     public void setEdad(int edad) {
