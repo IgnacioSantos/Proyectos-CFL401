@@ -19,16 +19,16 @@ public class Persona {
     private int dni;
     private ArrayList <Mascota> mascotas;
 
-    public Mascota[] getMascota() {
+    public ArrayList<Mascota> getMascotas() {
         return mascotas;
+    }
+
+    public void setMascotas(ArrayList<Mascota> mascotas) {
+        this.mascotas = mascotas;
     }
 
     public void setEdad(int edad) {
         this.edad = edad;
-    }
-
-    public void setMascota(Mascota[] mascota) {
-        this.mascotas = mascota;
     }
 
     public Persona(int id, String nombre, String apellido, int edad, int dni) {
@@ -41,11 +41,11 @@ public class Persona {
     }
     
     public boolean estaLaMascota(String nombre){
-        return  
+        return this.nombre.equals(nombre);
     }
     
     public int cuantasMascotasTenes(){
-        return mascotas.length;
+        return mascotas.size();
                 
     }
     
