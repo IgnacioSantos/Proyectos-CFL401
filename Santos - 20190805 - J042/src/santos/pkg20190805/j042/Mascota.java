@@ -39,6 +39,6 @@ public class Mascota {
     }
     
     public boolean sosMayorA(int edad){
-        return this.edad<edad;
+        return this.edad>edad;
     }
 }
