@@ -19,11 +19,11 @@ public class Persona {
     private int dni;
     private ArrayList <Mascota> mascotas;
 
-    public ArrayList<Mascota> getMascota() {
+    public ArrayList<Mascota> getMascotas() {
         return mascotas;
     }
 
-    public void setMascotas(Mascota mascota) {
+    public void setMascota(Mascota mascota) {
         mascotas.add(mascota);
     }
 
@@ -41,7 +41,12 @@ public class Persona {
     }
     
     public boolean estaLaMascota(String nombre){
-        return this.nombre.equals(nombre);
+        for(Mascota mascota:mascotas){
+            if(mascota.getNombre().equals(nombre)){
+                return true;
+            }
+        }
+        return false;
     }
     
     public int cuantasMascotasTenes(){
