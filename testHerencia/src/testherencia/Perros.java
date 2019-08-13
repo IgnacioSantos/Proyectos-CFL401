@@ -14,10 +14,13 @@ public class Perros extends Animales{
 
     
     public Perros(String nombre,int patas,int cantPelos){
-        this.nombre = nombre;
+        super (nombre,patas,100);
+        this.cantPelos = cantPelos;
+        
+        /*this.nombre = nombre;
         this.patas = patas;
         this.cantPelos = cantPelos;
-        energia = 100;
+        energia = 100;*/
     }
     
     public int getCantPelos() {
@@ -29,11 +32,18 @@ public class Perros extends Animales{
     }
     
     public void correr(){
-        
+        energia = energia-10;
     }
     
     public void jugar(){
-        
+        energia = energia-15;
+    }
+    
+    @Override
+    public void comer(String nomComida){
+        if(nomComida.equals("Raza")){
+            energia = energia+15;
+    }
     }
 }
 

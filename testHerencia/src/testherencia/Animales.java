@@ -14,6 +14,12 @@ public class Animales {
     protected int patas;
     protected int energia;
 
+    Animales(String nombre, int patas, int energia) {
+        this.nombre = nombre;
+        this.patas = patas;
+        this.energia = energia;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -38,7 +44,12 @@ public class Animales {
         this.energia = energia;
     }
     
-    public void comer(){
-        
+    public void comer(String nomComida){
+        if(energia<30){
+            energia = energia+15;
+        }
     }
-}
+    
+    
+    }
+

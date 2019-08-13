@@ -51,6 +51,7 @@ public class Gatos extends Animales {
         if (energia > 20) {
             jugar();
             gato.jugar();
+            
         }
     }
 }
