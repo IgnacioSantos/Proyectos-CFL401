@@ -17,7 +17,7 @@ public class TestHerencia {
     public static void main(String[] args) {
         Perros perro = new Perros("Boby",4,7000);
         Gatos gato = new Gatos("Mish",4,5000);
-        Aves loro = new Aves("Julio",2,2,60);
+        Aves ave = new Aves("Julio",2,2,60);
         Gatos gato2 = new Gatos("Salem",4,5000);
         
         System.out.println(gato.getEnergia());
@@ -34,6 +34,7 @@ public class TestHerencia {
         
         System.out.println(gato.getEnergia());
         
+        System.out.println(perro.getEnergia());
         
         perro.correr();
         perro.jugar();
@@ -46,6 +47,12 @@ public class TestHerencia {
         
         perro.comer("Raza");
         
+        perro.comer("Raza");
+        
+        System.out.println(perro.getEnergia());
+        
+        perro.comer("Raza");
+        
         System.out.println(perro.getEnergia());
         
         System.out.println(gato2.getEnergia());
@@ -62,6 +69,28 @@ public class TestHerencia {
         
         System.out.println(gato2.getEnergia());
         System.out.println(gato.getEnergia());
+        
+        
+        gato.jugarCon(ave);
+        
+        System.out.println(ave.getEnergia());
+        
+        ave.aveFenix(ave);
+        
+        System.out.println(ave.getEnergia());
+        
+        System.out.println(gato.getEnergia());
+        
+        gato.dormir(127);
+        
+        System.out.println(gato.getEnergia());
+        
+        System.out.println(gato.getVidas());
+        
+        gato.jugarConPerros();
+        
+        System.out.println(gato.getVidas());
+        
     }
     
 }

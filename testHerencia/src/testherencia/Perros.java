@@ -9,20 +9,20 @@ package testherencia;
  *
  * @author Programación
  */
-public class Perros extends Animales{
+public class Perros extends Animales {
+
     private int cantPelos;
 
-    
-    public Perros(String nombre,int patas,int cantPelos){
-        super (nombre,patas,100);
+    public Perros(String nombre, int patas, int cantPelos) {
+        super(nombre, patas, 100,1);
         this.cantPelos = cantPelos;
-        
+
         /*this.nombre = nombre;
         this.patas = patas;
         this.cantPelos = cantPelos;
         energia = 100;*/
     }
-    
+
     public int getCantPelos() {
         return cantPelos;
     }
@@ -30,23 +30,23 @@ public class Perros extends Animales{
     public void setCantPelos(int cantPelos) {
         this.cantPelos = cantPelos;
     }
-    
-    public void correr(){
-        energia = energia-10;
+
+    public void correr() {
+        energia = energia - 10;
     }
-    
-    public void jugar(){
-        energia = energia-15;
+
+    public void jugar() {
+        energia = energia - 15;
     }
-    
+
     @Override
-    public void comer(String nomComida){
-        if(nomComida.equals("Raza")){
-            energia = energia+15;
-    }
+    public void comer(String nomComida) {
+        if (energia > 100) {
+            energia = 100;
+        } else if (energia == 100) {
+            System.out.println("Estoy lleno");
+        } else if (nomComida.equals("Raza")) {
+            energia = energia + 15;
+        }
     }
 }
-
-
-
-
