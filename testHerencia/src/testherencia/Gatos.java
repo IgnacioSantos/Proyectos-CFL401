@@ -76,33 +76,55 @@ public class Gatos extends Animales {
         switch (elec) {
             case 1:
 
-                if (vidas > 0) {
-                    vidas = 0;
-                    System.out.println("Se murio");
+                while (vidas > 0) {
+
+                    if (energia > 0) {
+                        restarEnergia(10);
+                    } else if (energia < 0) {
+                        energia = 0;
+                    } else if (energia == 0) {
+                        restarUnaVida();
+                        energia = 1;
+                    }
+
                 }
 
                 break;
             case 2:
-                if (energia>1){
+                if (energia > 1) {
                     restarEnergia(10);
+                } else if (energia < 1) {
+                    energia = 1;
                 }
 
                 break;
             case 3:
-                if (vidas > 0) {
-                    vidas = 0;
-                    System.out.println("Se murio");
-                    
-                    
+                while (vidas > 0) {
+
+                    if (energia > 0) {
+                        restarEnergia(10);
+                    } else if (energia < 0) {
+                        energia = 0;
+                    } else if (energia == 0) {
+                        restarUnaVida();
+                        energia = 1;
+                    }
+
                 }
 
                 break;
             case 4:
-                System.out.println("Entre en el caso: " + 4);
+                int probabilidad = (int) (Math.random() * 20);
+
+                if (energia > 1) {
+                    energia = energia - probabilidad;
+                }
 
                 break;
             case 5:
-                System.out.println("Entre en el caso: " + 5);
+                if (energia > 20) {
+                    jugar();
+                }
 
                 break;
             default:
