@@ -9,7 +9,7 @@ package testherencia;
  *
  * @author Programación
  */
-public class Animales {
+public abstract class Animales {//abstract sierve para no poder declarar nada de esta clase osea crear una mascota de esta clase
 
     protected String nombre;
     protected int patas;

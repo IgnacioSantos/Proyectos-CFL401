@@ -87,7 +87,7 @@ public class TestHerencia {
         
         System.out.println(gato.getVidas());
         
-        gato.jugarConPerros();
+        gato.jugarCon(perro);
         
         System.out.println(gato.getVidas());
         

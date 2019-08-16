@@ -70,7 +70,7 @@ public class Gatos extends Animales {
         }
     }
 
-    public void jugarConPerros() {
+    public void jugarCon(Perros perro) {
 
         int elec = (int) (Math.random() * 5 + 1);
         switch (elec) {
@@ -114,7 +114,7 @@ public class Gatos extends Animales {
 
                 break;
             case 4:
-                int probabilidad = (int) (Math.random() * 20);
+                int probabilidad = (int) (Math.random() * 21);
 
                 if (energia > 1) {
                     energia = energia - probabilidad;
@@ -124,6 +124,7 @@ public class Gatos extends Animales {
             case 5:
                 if (energia > 20) {
                     jugar();
+                    perro.jugar();
                 }
 
                 break;
