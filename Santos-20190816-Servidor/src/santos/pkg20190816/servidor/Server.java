@@ -8,6 +8,7 @@ package santos.pkg20190816.servidor;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import static java.lang.Thread.sleep;
 
 /**
  *
@@ -19,7 +20,7 @@ public class Server extends Conexiones {
         super("servidor");
     }
 
-    public void procesar() throws IOException {
+    public void procesar() throws IOException, InterruptedException {
         String texto;
         String elec;
         clienteSocket = serverSocket.accept();
@@ -38,13 +39,16 @@ public class Server extends Conexiones {
 
             switch (elec) {
                 case "1":
+                    sleep(10000);
                     salida.writeUTF("Ya esta preparado tu Cafe.");
                     break;
                 case "2":
+                    sleep(10000);
                     salida.writeUTF("Ya esta preparado tu Cappuccino.");
                     break;
 
                 default:
+                    sleep(10000);
                     salida.writeUTF("Ya esta preparado tu Lagrima.");
             }
 
