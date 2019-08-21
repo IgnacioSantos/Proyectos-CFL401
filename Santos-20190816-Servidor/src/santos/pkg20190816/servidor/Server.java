@@ -24,8 +24,8 @@ public class Server extends Conexiones {
         String elec;
         clienteSocket = serverSocket.accept();
         prepararIO();
-        salida.writeUTF("Bienvenido");//mandamos mensaje
-        salida.writeUTF("Decime tu nombre");
+        salida.writeUTF("Bienvenido.");//mandamos mensaje
+        salida.writeUTF("Decime tu nombre:");
         texto = entrada.readUTF();//recibimos una respuesta
         while (true) {
             salida.writeUTF("¿Como estas " + texto + "?");
@@ -38,17 +38,17 @@ public class Server extends Conexiones {
 
             switch (elec) {
                 case "1":
-                    salida.writeUTF("Ya esta preparado tu Cafe");
+                    salida.writeUTF("Ya esta preparado tu Cafe.");
                     break;
                 case "2":
-                    salida.writeUTF("Ya esta preparado tu Cappuccino");
+                    salida.writeUTF("Ya esta preparado tu Cappuccino.");
                     break;
 
                 default:
-                    salida.writeUTF("Ya esta preparado tu Lagrima");
+                    salida.writeUTF("Ya esta preparado tu Lagrima.");
             }
 
-            salida.writeUTF("chau y gracias");
+            salida.writeUTF("chau y gracias.");
             cerrar();
 
             //System.out.println(texto);
