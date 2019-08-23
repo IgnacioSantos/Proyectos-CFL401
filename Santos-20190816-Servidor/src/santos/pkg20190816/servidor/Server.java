@@ -23,12 +23,13 @@ public class Server extends Conexiones {
     public void procesar() throws IOException, InterruptedException {
         String texto;
         String elec;
-        clienteSocket = serverSocket.accept();
-        prepararIO();
-        salida.writeUTF("Bienvenido.");//mandamos mensaje
-        salida.writeUTF("Decime tu nombre:");
-        texto = entrada.readUTF();//recibimos una respuesta
         while (true) {
+            clienteSocket = serverSocket.accept();
+            prepararIO();
+            salida.writeUTF("Bienvenido.");//mandamos mensaje
+            salida.writeUTF("Decime tu nombre:");
+            texto = entrada.readUTF();//recibimos una respuesta
+
             salida.writeUTF("¿Como estas " + texto + "?");
 
             salida.writeUTF("¿Que quieres tomar:?\n"
@@ -53,7 +54,9 @@ public class Server extends Conexiones {
             }
 
             salida.writeUTF("chau y gracias.");
-            cerrar();
+            entrada.close();
+            salida.close();
+            clienteSocket.close();
 
             //System.out.println(texto);
         }

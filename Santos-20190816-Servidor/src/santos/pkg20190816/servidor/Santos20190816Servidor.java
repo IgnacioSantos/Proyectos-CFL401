@@ -16,7 +16,7 @@ public class Santos20190816Servidor {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Server servidor = new Server();
         
         servidor.procesar();
