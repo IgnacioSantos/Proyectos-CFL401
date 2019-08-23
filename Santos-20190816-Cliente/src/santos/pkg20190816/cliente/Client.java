@@ -21,8 +21,8 @@ public class Client extends Conexiones {
     }
 
     public void prepararIO() throws IOException {
-        entrada = new DataInputStream(clienteSocket.getInputStream());
-        salida = new DataOutputStream(clienteSocket.getOutputStream());
+        entrada = new DataInputStream(clienteSocket.getInputStream());//DataInputStream sirve para mostrar los datos que un servidor o cliente mande
+        salida = new DataOutputStream(clienteSocket.getOutputStream());//DataOutputStream sirve para mandar los datos que un servidor o cliente paara responder
     }
 
     public void cerrar() throws IOException {
@@ -34,7 +34,7 @@ public class Client extends Conexiones {
         String texto;
         String respuesta;
         prepararIO();
-        texto = entrada.readUTF();
+        texto = entrada.readUTF();//
         System.out.println(texto);
         texto = entrada.readUTF();
         System.out.println(texto);
