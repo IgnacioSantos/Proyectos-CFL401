@@ -5,6 +5,8 @@
  */
 package gestiondepersonal;
 
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author Programación
@@ -28,20 +30,36 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnGenerarAreas = new javax.swing.JButton();
+        btnCargaUsuario = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        btnGenerarTablas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Generar Tablas");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnGenerarAreas.setText("Generar Areas");
+        btnGenerarAreas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                btnGenerarAreasMouseClicked(evt);
+            }
+        });
+        btnGenerarAreas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarAreasActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Cargar Usuario");
+        btnCargaUsuario.setText("Cargar Usuario");
+        btnCargaUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCargaUsuarioMouseClicked(evt);
+            }
+        });
+        btnCargaUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargaUsuarioActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Seleccione una Opcion");
 
@@ -51,9 +69,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 27, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnGenerarAreas)
                 .addGap(82, 82, 82)
-                .addComponent(jButton2)
+                .addComponent(btnCargaUsuario)
                 .addGap(39, 39, 39))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(119, 119, 119)
@@ -66,33 +84,64 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnGenerarAreas)
+                    .addComponent(btnCargaUsuario))
                 .addContainerGap())
         );
+
+        btnGenerarTablas.setText("Generar Tablas");
+        btnGenerarTablas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGenerarTablasMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(btnGenerarTablas)
+                .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnGenerarTablas)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        GestionDePersonal.cambiarVentana();
-    }//GEN-LAST:event_jButton1MouseClicked
+    private void btnGenerarAreasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarAreasMouseClicked
+        GestionDePersonal.cambiarVentana("genAreas");
+    }//GEN-LAST:event_btnGenerarAreasMouseClicked
+
+    private void btnCargaUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargaUsuarioMouseClicked
+        GestionDePersonal.cambiarVentana("carUsuario");
+    }//GEN-LAST:event_btnCargaUsuarioMouseClicked
+
+    private void btnGenerarAreasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarAreasActionPerformed
+        
+    }//GEN-LAST:event_btnGenerarAreasActionPerformed
+
+    private void btnCargaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCargaUsuarioActionPerformed
+
+    private void btnGenerarTablasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarTablasMouseClicked
+        GestionDePersonal.cambiarVentana("genAreas");
+    }//GEN-LAST:event_btnGenerarTablasMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws UnsupportedLookAndFeelException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -109,11 +158,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        }catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
 
@@ -126,8 +176,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnCargaUsuario;
+    private javax.swing.JButton btnGenerarAreas;
+    private javax.swing.JButton btnGenerarTablas;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
