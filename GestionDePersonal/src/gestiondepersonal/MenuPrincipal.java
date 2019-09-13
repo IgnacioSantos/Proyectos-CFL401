@@ -5,6 +5,7 @@
  */
 package gestiondepersonal;
 
+import static gestiondepersonal.CargaUsuarios.btnAtras;
 import javax.swing.UnsupportedLookAndFeelException;
 
 /**
@@ -67,22 +68,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(0, 27, Short.MAX_VALUE)
                 .addComponent(btnGenerarAreas)
-                .addGap(82, 82, 82)
-                .addComponent(btnCargaUsuario)
-                .addGap(39, 39, 39))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(119, 119, 119)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(71, 71, 71)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCargaUsuario)
+                    .addComponent(jLabel4))
+                .addGap(48, 48, 48))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGenerarAreas)
                     .addComponent(btnCargaUsuario))
@@ -123,6 +122,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGenerarAreasMouseClicked
 
     private void btnCargaUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargaUsuarioMouseClicked
+        btnAtras.setEnabled(Boolean.TRUE);
+        btnAtras.setVisible(Boolean.TRUE);
         GestionDePersonal.cambiarVentana("carUsuario");
     }//GEN-LAST:event_btnCargaUsuarioMouseClicked
 
@@ -176,7 +177,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCargaUsuario;
+    public static javax.swing.JButton btnCargaUsuario;
     private javax.swing.JButton btnGenerarAreas;
     private javax.swing.JButton btnGenerarTablas;
     private javax.swing.JLabel jLabel4;

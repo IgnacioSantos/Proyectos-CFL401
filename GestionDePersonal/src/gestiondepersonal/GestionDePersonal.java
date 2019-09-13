@@ -24,8 +24,12 @@ public class GestionDePersonal {
         menuPrincipal = new MenuPrincipal();
         cargaUsuarios = new CargaUsuarios();
         generarAreas = new GenerarAreas();
-
-        menuPrincipal.setVisible(true);
+if (primerUsuario()){
+    cargaUsuarios.setVisible(true);
+}else{
+    menuPrincipal.setVisible(true);
+}
+        
 
     }
 
