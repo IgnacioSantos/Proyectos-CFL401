@@ -12,6 +12,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -19,8 +20,8 @@ import java.sql.Statement;
  *
  * @author Programación
  */
+public class ConexionDB {
 
-public class Conexiones {
     private String ip;
     private int puerto;
     private String baseDeDatos;
@@ -28,12 +29,8 @@ public class Conexiones {
     private String contrasenia;
     private Connection conexion;
     private Statement flujoConexion;
-    private DataInputStream flujoEntrada;
-    private DataOutputStream flujoSalida;
-    
-    
-    
-    public Conexiones(String ip,int puerto,String baseDeDatos,String usuario,String contrasenia) throws IOException, SQLException{
+
+    public ConexionDB(String ip, int puerto, String baseDeDatos, String usuario, String contrasenia) throws IOException, SQLException {
         this.ip = ip;
         this.puerto = puerto;
         this.baseDeDatos = baseDeDatos;
@@ -41,9 +38,8 @@ public class Conexiones {
         this.contrasenia = contrasenia;
         conexion = DriverManager.getConnection("jdbc:mariadb://" + ip + ":" + puerto + "/" + baseDeDatos + "?user=" + usuario + "&password=" + contrasenia);
         flujoConexion = conexion.createStatement();
-        
-        
-    /*    if (tipo.equals("servidor")){
+
+        /*    if (tipo.equals("servidor")){
         
         serverSocket =new ServerSocket(PUERTO);
         clienteSocket=new Socket();
@@ -61,6 +57,38 @@ public class Conexiones {
         conexion = DriverManager.getConnection("jdbc:mariadb://" + ip + ":" + puerto + "/" + nombreDeBd + "?user=" + usuario + "&password=" + contrasenia);
         consultor = conexion.createStatement();
     }
-    */
-    }   
+         */
+    }
+
+    public void crearTabla(String tabla, String columna) throws SQLException {
+        flujoConexion.execute("CREATE TABLE IF NOT EXISTS " + tabla + "(" + columna + ");");
+    }
+
+    public ResultSet consultar(String consulta) throws SQLException {
+        return flujoConexion.executeQuery("SELECT * FROM accesos;");
+    }
+
+    public void insertar(String tabla, String columnas, String valores, String condiciones) throws SQLException {
+        if (columnas == null) {
+            flujoConexion.execute("INSERT INTO " + tabla + " VALUES(" + valores + ")" + condiciones + ");");
+        } else {
+            flujoConexion.execute("INSERT INTO " + tabla + " (" + columnas + ") VALUES(" + valores + ")" + condiciones + ");");
+        }
+    }
+
+    public int actualizar(String tabla, String valoresNuevos, String condicion) throws SQLException {
+        return flujoConexion.executeUpdate("UPDATE " + tabla + " SET " + valoresNuevos + " WHERE " + condicion + ";");
+    }
+
+    public void cerrarConexion() throws SQLException {
+        if (flujoConexion != null) {
+            flujoConexion.close();
+
+        }
+
+        if (conexion != null) {
+            conexion.close();
+        }
+
+    }
 }

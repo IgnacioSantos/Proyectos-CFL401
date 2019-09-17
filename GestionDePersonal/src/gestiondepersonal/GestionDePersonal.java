@@ -21,18 +21,28 @@ public class GestionDePersonal {
     private static MenuPrincipal menuPrincipal;
     private static CargaUsuarios cargaUsuarios;
     private static GenerarAreas generarAreas;
-    private static Conexiones conexionDb;
+    private static ConexionDB conexionDb;
+    private static testVentana ventana;
 
     public static void main(String[] args) throws IOException, SQLException {
         menuPrincipal = new MenuPrincipal();
         cargaUsuarios = new CargaUsuarios();
         generarAreas = new GenerarAreas();
-        conexionDb = new Conexiones("127.0.0.7",3306,"cfl401","programador","cfl401");
-if (primerUsuario()){
+        ventana = new testVentana();
+        conexionDb = new ConexionDB("127.0.0.7",3306,"cfl401","programador","cfl401");
+        
+        ventana.setVisible(true);
+/*if (primerUsuario()){
+    cargaUsuarios.setTitle("PJS - Carga de Usuario - G.G");//hace aparecer el titulo cambiado
+    cargaUsuarios.setLocationRelativeTo(null);//hace que la ventana se centre segun la resolucion de pantalla
+    cargaUsuarios.dispose();//desdibuja la tarjeta grafica
+    cargaUsuarios.setUndecorated(Boolean.TRUE);//quita la barra de titulo y los bordes de la ventana
     cargaUsuarios.setVisible(true);
+    //cargaUsuarios.setMaximumSize();
 }else{
+    menuPrincipal.setLocationRelativeTo(null);
     menuPrincipal.setVisible(true);
-}
+}*/
         
 
     }
