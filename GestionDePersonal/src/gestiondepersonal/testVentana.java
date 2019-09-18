@@ -5,6 +5,9 @@
  */
 package gestiondepersonal;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Programación
@@ -16,6 +19,149 @@ public class testVentana extends javax.swing.JFrame {
      */
     public testVentana() {
         initComponents();
+        apellido.setEnabled(Boolean.FALSE);
+        apellido.setEditable(Boolean.FALSE);
+        id.setEnabled(Boolean.FALSE);
+        id.setEditable(Boolean.FALSE);
+        nombre.setEnabled(Boolean.FALSE);
+        nombre.setEditable(Boolean.FALSE);
+        columnas.setEnabled(Boolean.FALSE);
+        columnas.setEditable(Boolean.FALSE);
+        nomTablaCrear.setEnabled(Boolean.FALSE);
+        nomTablaCrear.setEditable(Boolean.FALSE);
+        nomTablaIngresar.setEnabled(Boolean.FALSE);
+        nomTablaIngresar.setEditable(Boolean.FALSE);
+        nomTablaExiste.setEnabled(Boolean.FALSE);
+        nomTablaExiste.setEditable(Boolean.FALSE);
+        nomTablaBorrar.setEnabled(Boolean.FALSE);
+        nomTablaBorrar.setEditable(Boolean.FALSE);
+        nomTablaActualizar.setEnabled(Boolean.FALSE);
+        nomTablaActualizar.setEditable(Boolean.FALSE);
+        btnCrear.setEnabled(Boolean.FALSE);
+        btnBorrar.setEnabled(Boolean.FALSE);
+        btnActualizar.setEnabled(Boolean.FALSE);
+        btnExiste.setEnabled(Boolean.FALSE);
+        btnIngresar.setEnabled(Boolean.FALSE);
+    }
+
+    public JTextField getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(JTextField apellido) {
+        this.apellido = apellido;
+    }
+
+    public JButton getBtnActualizar() {
+        return btnActualizar;
+    }
+
+    public void setBtnActualizar(JButton btnActualizar) {
+        this.btnActualizar = btnActualizar;
+    }
+
+    public JButton getBtnBorrar() {
+        return btnBorrar;
+    }
+
+    public void setBtnBorrar(JButton btnBorrar) {
+        this.btnBorrar = btnBorrar;
+    }
+
+    public JButton getBtnConectar() {
+        return btnConectar;
+    }
+
+    public void setBtnConectar(JButton btnConectar) {
+        this.btnConectar = btnConectar;
+    }
+
+    public JButton getBtnCrear() {
+        return btnCrear;
+    }
+
+    public void setBtnCrear(JButton btnCrear) {
+        this.btnCrear = btnCrear;
+    }
+
+    public JButton getBtnExiste() {
+        return btnExiste;
+    }
+
+    public void setBtnExiste(JButton btnExiste) {
+        this.btnExiste = btnExiste;
+    }
+
+    public JButton getBtnIngresar() {
+        return btnIngresar;
+    }
+
+    public void setBtnIngresar(JButton btnIngresar) {
+        this.btnIngresar = btnIngresar;
+    }
+
+    public JTextField getColumnas() {
+        return columnas;
+    }
+
+    public void setColumnas(JTextField columnas) {
+        this.columnas = columnas;
+    }
+
+    public JTextField getId() {
+        return id;
+    }
+
+    public void setId(JTextField id) {
+        this.id = id;
+    }
+
+    public JTextField getNomTablaActualizar() {
+        return nomTablaActualizar;
+    }
+
+    public void setNomTablaActualizar(JTextField nomTablaActualizar) {
+        this.nomTablaActualizar = nomTablaActualizar;
+    }
+
+    public JTextField getNomTablaBorrar() {
+        return nomTablaBorrar;
+    }
+
+    public void setNomTablaBorrar(JTextField nomTablaBorrar) {
+        this.nomTablaBorrar = nomTablaBorrar;
+    }
+
+    public JTextField getNomTablaCrear() {
+        return nomTablaCrear;
+    }
+
+    public void setNomTablaCrear(JTextField nomTablaCrear) {
+        this.nomTablaCrear = nomTablaCrear;
+    }
+
+    public JTextField getNomTablaExiste() {
+        return nomTablaExiste;
+    }
+
+    public void setNomTablaExiste(JTextField nomTablaExiste) {
+        this.nomTablaExiste = nomTablaExiste;
+    }
+
+    public JTextField getNomTablaIngresar() {
+        return nomTablaIngresar;
+    }
+
+    public void setNomTablaIngresar(JTextField nomTablaIngresar) {
+        this.nomTablaIngresar = nomTablaIngresar;
+    }
+
+    public JTextField getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(JTextField nombre) {
+        this.nombre = nombre;
     }
 
     /**
@@ -51,7 +197,7 @@ public class testVentana extends javax.swing.JFrame {
         btnExiste = new javax.swing.JButton();
         nomTablaExiste = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        estadoActual = new javax.swing.JLabel();
         btnConectar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -111,9 +257,14 @@ public class testVentana extends javax.swing.JFrame {
 
         jLabel10.setText("Tabla:");
 
-        jLabel11.setText("Desconectado");
+        estadoActual.setText("Desconectado");
 
         btnConectar.setText("Conectar");
+        btnConectar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConectarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -171,16 +322,15 @@ public class testVentana extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnCrear))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(124, 124, 124)
                                 .addComponent(btnConectar))
-                            .addComponent(jLabel11))
+                            .addComponent(estadoActual))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -231,7 +381,7 @@ public class testVentana extends javax.swing.JFrame {
                     .addComponent(nomTablaExiste, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
+                    .addComponent(estadoActual)
                     .addComponent(btnConectar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -258,6 +408,62 @@ public class testVentana extends javax.swing.JFrame {
     private void btnCrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCrearMouseClicked
+
+    private void btnConectarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConectarMouseClicked
+        if (estadoActual.getText().equals("Desconectado")) {
+            estadoActual.setText("Conectado");
+            btnConectar.setText("Desconectar");
+            apellido.setEnabled(Boolean.TRUE);
+            apellido.setEditable(Boolean.TRUE);
+            id.setEnabled(Boolean.TRUE);
+            id.setEditable(Boolean.TRUE);
+            nombre.setEnabled(Boolean.TRUE);
+            nombre.setEditable(Boolean.TRUE);
+            columnas.setEnabled(Boolean.TRUE);
+            columnas.setEditable(Boolean.TRUE);
+            nomTablaCrear.setEnabled(Boolean.TRUE);
+            nomTablaCrear.setEditable(Boolean.TRUE);
+            nomTablaIngresar.setEnabled(Boolean.TRUE);
+            nomTablaIngresar.setEditable(Boolean.TRUE);
+            nomTablaExiste.setEnabled(Boolean.TRUE);
+            nomTablaExiste.setEditable(Boolean.TRUE);
+            nomTablaBorrar.setEnabled(Boolean.TRUE);
+            nomTablaBorrar.setEditable(Boolean.TRUE);
+            nomTablaActualizar.setEnabled(Boolean.TRUE);
+            nomTablaActualizar.setEditable(Boolean.TRUE);
+            btnCrear.setEnabled(Boolean.TRUE);
+            btnBorrar.setEnabled(Boolean.TRUE);
+            btnActualizar.setEnabled(Boolean.TRUE);
+            btnExiste.setEnabled(Boolean.TRUE);
+            btnIngresar.setEnabled(Boolean.TRUE);
+        } else {
+            estadoActual.setText("Desconectado");
+            btnConectar.setText("Conectar");
+            apellido.setEnabled(Boolean.FALSE);
+            apellido.setEditable(Boolean.FALSE);
+            id.setEnabled(Boolean.FALSE);
+            id.setEditable(Boolean.FALSE);
+            nombre.setEnabled(Boolean.FALSE);
+            nombre.setEditable(Boolean.FALSE);
+            columnas.setEnabled(Boolean.FALSE);
+            columnas.setEditable(Boolean.FALSE);
+            nomTablaCrear.setEnabled(Boolean.FALSE);
+            nomTablaCrear.setEditable(Boolean.FALSE);
+            nomTablaIngresar.setEnabled(Boolean.FALSE);
+            nomTablaIngresar.setEditable(Boolean.FALSE);
+            nomTablaExiste.setEnabled(Boolean.FALSE);
+            nomTablaExiste.setEditable(Boolean.FALSE);
+            nomTablaBorrar.setEnabled(Boolean.FALSE);
+            nomTablaBorrar.setEditable(Boolean.FALSE);
+            nomTablaActualizar.setEnabled(Boolean.FALSE);
+            nomTablaActualizar.setEditable(Boolean.FALSE);
+            btnCrear.setEnabled(Boolean.FALSE);
+            btnBorrar.setEnabled(Boolean.FALSE);
+            btnActualizar.setEnabled(Boolean.FALSE);
+            btnExiste.setEnabled(Boolean.FALSE);
+            btnIngresar.setEnabled(Boolean.FALSE);
+        }
+    }//GEN-LAST:event_btnConectarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -303,10 +509,10 @@ public class testVentana extends javax.swing.JFrame {
     private javax.swing.JButton btnExiste;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JTextField columnas;
+    private javax.swing.JLabel estadoActual;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
