@@ -25,14 +25,15 @@ public class GestionDePersonal {
     private static testVentana ventana;
 
     public static void main(String[] args) throws IOException, SQLException {
-        menuPrincipal = new MenuPrincipal();
+       /* menuPrincipal = new MenuPrincipal();
         cargaUsuarios = new CargaUsuarios();
         generarAreas = new GenerarAreas();
         ventana = new testVentana();
-        conexionDb = new ConexionDB("127.0.0.7",3306,"cfl401","programador","cfl401");
+        //conexionDb = new ConexionDB("127.0.0.7",3306,"proyecto_test","programador","cfl401");
+        
         
         ventana.setVisible(true);
-/*if (primerUsuario()){
+if (primerUsuario()){
     cargaUsuarios.setTitle("PJS - Carga de Usuario - G.G");//hace aparecer el titulo cambiado
     cargaUsuarios.setLocationRelativeTo(null);//hace que la ventana se centre segun la resolucion de pantalla
     cargaUsuarios.dispose();//desdibuja la tarjeta grafica
@@ -43,8 +44,27 @@ public class GestionDePersonal {
     menuPrincipal.setLocationRelativeTo(null);
     menuPrincipal.setVisible(true);
 }*/
+       
+        /*if (GestionDePersonal.getConexionDb() != null) {
+            
+        }else{
+            GestionDePersonal.generarConexion("127.0.0.7",3306,"proyecto_test","programador","cfl401");
+            GestionDePersonal.getConexionDb().conectarADB();
+        }*/
+        System.out.println(conexionDb);
+        System.out.println(getConexionDb());
         
+        ventana = new testVentana();
+        
+        ventana.setVisible(true);
+    }
 
+    public static ConexionDB getConexionDb() {
+        return conexionDb;
+    }
+
+    public static void setConexionDb(ConexionDB conexionDb) {
+        GestionDePersonal.conexionDb = conexionDb;
     }
 
     public static void cambiarVentana(String cambiar) {
@@ -78,5 +98,13 @@ public class GestionDePersonal {
     
     private boolean corroborarYCargar(){
         return true;
+    }
+    
+    private void generarConexion() throws IOException, SQLException{
+        conexionDb = new ConexionDB("127.0.0.7",3306,"proyecto_test","programador","cfl401");
+    }
+    
+    public static void mostrar(){
+        System.out.println(conexionDb);
     }
 }

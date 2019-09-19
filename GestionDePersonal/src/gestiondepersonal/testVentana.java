@@ -5,6 +5,11 @@
  */
 package gestiondepersonal;
 
+import java.awt.Color;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -42,6 +47,8 @@ public class testVentana extends javax.swing.JFrame {
         btnActualizar.setEnabled(Boolean.FALSE);
         btnExiste.setEnabled(Boolean.FALSE);
         btnIngresar.setEnabled(Boolean.FALSE);
+        estadoActual.setForeground(Color.RED);
+
     }
 
     public JTextField getApellido() {
@@ -411,7 +418,26 @@ public class testVentana extends javax.swing.JFrame {
 
     private void btnConectarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConectarMouseClicked
         if (estadoActual.getText().equals("Desconectado")) {
-            estadoActual.setText("Conectado");
+            habilitar();
+            if (GestionDePersonal.getConexionDb() != null) {
+            //GestionDePersonal.mostrar();
+                System.out.println(GestionDePersonal.getConexionDb().conectarADB());
+        }else{
+                try {
+                    GestionDePersonal.setConexionDb(new ConexionDB("127.0.0.1",3306,"proyecto_test","programador","cfl401"));
+                } catch (IOException | SQLException ex) {
+                    Logger.getLogger(testVentana.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                GestionDePersonal.mostrar();
+        }
+            //
+        } else {
+            deshabilitar();
+
+        }
+    }//GEN-LAST:event_btnConectarMouseClicked
+private void habilitar(){
+    estadoActual.setText("Conectado");
             btnConectar.setText("Desconectar");
             apellido.setEnabled(Boolean.TRUE);
             apellido.setEditable(Boolean.TRUE);
@@ -436,8 +462,11 @@ public class testVentana extends javax.swing.JFrame {
             btnActualizar.setEnabled(Boolean.TRUE);
             btnExiste.setEnabled(Boolean.TRUE);
             btnIngresar.setEnabled(Boolean.TRUE);
-        } else {
-            estadoActual.setText("Desconectado");
+            estadoActual.setForeground(Color.GREEN);
+}
+
+private void deshabilitar(){
+    estadoActual.setText("Desconectado");
             btnConectar.setText("Conectar");
             apellido.setEnabled(Boolean.FALSE);
             apellido.setEditable(Boolean.FALSE);
@@ -462,9 +491,9 @@ public class testVentana extends javax.swing.JFrame {
             btnActualizar.setEnabled(Boolean.FALSE);
             btnExiste.setEnabled(Boolean.FALSE);
             btnIngresar.setEnabled(Boolean.FALSE);
-        }
-    }//GEN-LAST:event_btnConectarMouseClicked
-
+            estadoActual.setForeground(Color.RED);
+            
+}
     /**
      * @param args the command line arguments
      */
