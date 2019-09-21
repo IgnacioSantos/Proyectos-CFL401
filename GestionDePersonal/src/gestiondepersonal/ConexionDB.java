@@ -30,6 +30,46 @@ public class ConexionDB {
     private Connection conexion;
     private Statement flujoConexion;
 
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public int getPuerto() {
+        return puerto;
+    }
+
+    public void setPuerto(int puerto) {
+        this.puerto = puerto;
+    }
+
+    public String getBaseDeDatos() {
+        return baseDeDatos;
+    }
+
+    public void setBaseDeDatos(String baseDeDatos) {
+        this.baseDeDatos = baseDeDatos;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
+    }
+
     public ConexionDB(String ip, int puerto, String baseDeDatos, String usuario, String contrasenia) throws IOException, SQLException {
         this.ip = ip;
         this.puerto = puerto;
@@ -104,5 +144,9 @@ public class ConexionDB {
         }catch(SQLException e){
             return false;
         }
+    }
+    
+    public boolean estasConectado() throws SQLException{
+        return !(flujoConexion.isClosed()&&conexion.isClosed());
     }
 }

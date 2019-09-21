@@ -423,12 +423,14 @@ public class testVentana extends javax.swing.JFrame {
             //GestionDePersonal.mostrar();
                 System.out.println(GestionDePersonal.getConexionDb().conectarADB());
         }else{
+                
                 try {
                     GestionDePersonal.setConexionDb(new ConexionDB("127.0.0.1",3306,"proyecto_test","programador","cfl401"));
                 } catch (IOException | SQLException ex) {
                     Logger.getLogger(testVentana.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                GestionDePersonal.mostrar();
+                //GestionDePersonal.mostrar();
+                System.out.println(GestionDePersonal.getConexionDb().conectarADB());
         }
             //
         } else {
